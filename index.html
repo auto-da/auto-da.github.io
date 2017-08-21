@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-Hans" lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Automatic Dataset Augmentation</title>
+    <meta name="robots" content="all" />
+    <meta name="author" content="Yalong Bai">
+    <meta http-equiv="X-UA-Compatible" content="IE=100" />
+    <link rel="stylesheet" type="text/css" href="public/css/autoset.css"/>
+    <link rel="stylesheet" type="text/css" href="public/css/reset.css"/>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39157716-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+    </script>
+    <script src="public/javascripts/jquery/1.5.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="outline"></div>
+    <div class="container">
+  		<div id="content">
+<div class="about">
+  <div class="profile">
+    <div class="info" width="100%">
+      <div class="first-name">AutoDA</div>
+      <p class="extra-info">An automatically constucted dataset for augmenting ILSVRV-2012 dataset.</p>
+    </div>
+  </div>
+  <div class="about-page">
+    <div class="line-2">
+      <h1>Details</h1>
+      <p>AutoDA dataset is constructed to augment existing datasets ILSVRC-2012. The dataset is labeled by both of Web and DCNN. Web provides massive images with rich contextual information, while DCNN well-trained on ILSVRC-2012 are used to label these images and filter out noisy images. Meanwhile, the rich contextual information from Web ensures DCNN to archieve high labeling accuracy with relatively low confidence threshold. Togethor, we can augment the ILSVRC-2012 dataset in a scalable, accurate, and informative way.</p>
+
+      <p>The AutoDA dataset contains <b>12.5 million</b> of images crawled from Web without URL or domain restriction. The number of images per category for AutoDA and ILSVRC-2012 is shown in Fig 1. The category list of AutoDA is same with ILSVRC-2012. The AutoDA also provides <b>texutal information</b> (relevant textual description accompanied with image in webpage) for each images. The AutoDA dataset is applicable for many kinds of vision tasks such as Object Recognition, Image Caption and Visual Question and Answer.</p>
+      <figure>
+        <img src="public/autoda_statistic.png" width="70%" alt>
+        <figcaption>Fig.1 - The image distributions of dataset AutoDA and ILSVRC-2012.</figcaption>
+      </figure>
+    </div>
+    <div class="line-2">
+      <h1>Dataset Downloads</h1>
+      <h2>1. <a href="">Download Image URLs</a></h2>
+      <p>The URLs are listed in a single txt file, where each line contains an image ID and category label and the original URL. The category label is following the category order in ILSVRC-2012 (<a href="">Here</a>).</p>
+      <h2>2. <a href="">Download Textual Metadata</a></h2>
+      <p>The textual descriptions of each image in AutoDA are free available for download. All of these information are listed in a single txt file, where each line can be splitted into five elements including <code>Image Key</code>, <code>Category Label</code>, <code>URL</code>, <code>Meta Type</code> and <code>Text Decription</code> by "\t". 
+      <!--h2>Download Original Images</h2-->
+      <!--p>First you are always free to obtain the images by their URLs. Alternatively, if you are a researcher/educator who wish to have a copy of the original images for non-commercial research and/or educational use, we may provide you access through our site, under certain conditions and at our discretion. The details are as follows:
+      </p>
+      <blockquote>
+        <p>1. Send a email</p>
+
+      </blockquote-->
+      <h1>Models</h1>
+      <p>Below table shows the performance and download link of the models we trained on AutoDA. It worthly note that we selected the best performance snapshot before overfitting  </p>
+      <div id="markdown-body">
+      <table>
+        <tbody>
+          <tr>
+            <td>DCNN</td>
+            <td>ILSVRC-2012</td>
+            <td>AutoDA</td>
+            <td>Merged</td>
+            <td>Merged (No dropout)</td>
+          </tr>
+          <tr>
+            <td>AlexNet</td>
+            <td>60.36 (82.38)</td>
+            <td>56.58 (78.57) <a href="">[Model]</a></td>
+            <td>62.71 (83.71) <a href="">[Model]</a></td>
+            <td>61.72 (82.62) <a href="">[Model]</a></td>
+          </tr>
+          <tr>
+            <td>ResNet-50</td>
+            <td>74.44 (92.11)</td>
+            <td>70.17 (88.09) <a href="">[Model]</a></td>
+            <td>77.36 (93.29) <a href="">[Model]</a></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <!--h1>Download</h1>
+      <h2><a href="http://1drv.ms/1NHxmi3">1. Autoset-1K</a></h2>
+      <li>For each category, a set of image ID in <a href="http://clickture.blob.core.windows.net/split?restype=container&comp=list">Clickture-Full</a> is given. You can extract Autoset-1K image dataset according to our given image ID from Click-Full which contains 40 million of images.</li>
+      <li>You must accept the <a href="http://web-ngram.research.microsoft.com/GrandChallenge/MSR-LA%20Data-MSR%20Bing%20Image%20Challenge.pdf">enclosed License Terms </a> of Bing-MSR Image Annotation Challenge Data in order to use Click-Full dataset. You are not allowed to further distribute Autoset-1K and Click-Full dataset.</li>
+      <h2><a href="http://1drv.ms/1MqSvqR">2. Visual based Word Embeddings</a></h2>
+      <h2><a href="http://1drv.ms/1OCgnMM">3. KNN results of Visual based Word Embeddings</a></h2-->
+    </div>
+   <!--div class="line-3">
+     <h1>About</h1>
+  </div-->
+
+<!--
+    <div class="line-5">
+      <section id="internet-footprint">
+      <h1>Downloads</h1>
+      <p><a href="/download1">Parser</a> - parser.<br />
+      <a href="http://www.pixiv.net/member.php?id=4798189">SVM</a> - write something.
+      </p>
+      </section>
+    </div>
+-->
+  </div>
+</div>
+  		</div>
+    </div>
+  </body>
+</html>
