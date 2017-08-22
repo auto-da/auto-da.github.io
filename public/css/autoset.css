@@ -499,6 +499,11 @@ height: auto;
 
 }
 
+div.pdf {
+  position: absolute;
+ top: -42px;
+ left: 0;width:100%;
+ }
 
 
 /* markdown style*/
