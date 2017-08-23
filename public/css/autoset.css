@@ -506,6 +506,79 @@ div.pdf {
  }
 
 
+#comment input.submit, comment textarea { 		
+  height: 100%;
+  padding: 8px; 
+  margin: 4px 0 15px 0; 
+  background: #fff; 
+  /*width: 220px; */
+  width: 100%;
+  font-size: 14px; 
+  color: #555; 
+  border: 1px #ddd solid;
+
+  /* -- CSS3 Shadow - create a shadow around each input element -- */ 
+  -webkit-box-shadow: 0px 0px 4px #aaa;
+  -moz-box-shadow: 0px 0px 4px #aaa; 
+  box-shadow: 0px 0px 4px #aaa;
+
+  /* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
+  -webkit-transition: background 0.3s linear;							
+}
+
+#comment textarea {		
+  margin-right: 5%;
+  width: 98%; 
+  height: 148px; 		 		
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#comment input:hover, comment textarea:hover { 
+  background: #eee; 
+}
+
+#comment input.cancel {
+  margin-left: 30px;
+}
+
+#comment input.delete {
+  margin-left: 60px;
+}
+
+#comment input.submit, comment input.cancel, comment input.delete{ 	
+  width: 150px; 
+  color: #eee; 
+/*  text-transform: uppercase; */
+  margin-top: 10px;
+  background-color: #4b5258;
+  border: none;
+
+  /* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
+  -webkit-transition: -webkit-box-shadow 0.3s linear;
+
+  /* -- CSS3 - Rounded Corners -- */
+  /*
+  -moz-border-radius: 4px; 
+  -webkit-border-radius: 4px;
+  border-radius: 4px; 
+  */
+
+  /* -- CSS3 Shadow - create a shadow around each input element -- */ 
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4b5258), to(#6e6e6e)); 
+  background: -moz-linear-gradient(25% 75% 90deg,#6e6e6e, #4b5258);		
+} 
+
+#comment input.submit:hover, input.cancel:hover, comment input.delete:hover { 		
+  -webkit-box-shadow: 0px 0px 20px #555;
+  -moz-box-shadow: 0px 0px 20px #aaa; 
+  box-shadow: 0px 0px 20px #555;	
+  cursor:  pointer; 
+} 		
+
+
 /* markdown style*/
 #markdown-body ul, #markdown-body ol {
   margin: 15px 0;
@@ -656,17 +729,17 @@ div.pdf {
   background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
 }
 
-#markdown-body blockquote {
-  background: #fff;
+blockquote {
+  /*background: #fff;*/
   border-left: 10px solid #6e6e6e;
-  margin: 0 0 20px 20px;
+  margin: 0;
   padding: 0.5em 10px 1px 20px;
   box-shadow: inset 0 1px 4px rgba(125, 125, 125, .65);
   -moz-box-shadow: inset 0 1px 4px rgba(125, 125, 125, .65);
   -webkit-box-shadow: inset 0 1px 4px rgba(125, 125, 125, .65);
   -webkit-transition: all .08s ease-in-out;
 }
-#markdown-body blockquote:before {
+blockquote:before {
   color:#fff;
   content:open-quote;
   font-size:4em;

@@ -1,106 +1,142 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-Hans" lang="zh-Hans">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Automatic Dataset Augmentation</title>
-    <meta name="robots" content="all" />
-    <meta name="author" content="Yalong Bai">
-    <meta http-equiv="X-UA-Compatible" content="IE=100" />
-    <link rel="stylesheet" type="text/css" href="public/css/autoset.css"/>
-    <link rel="stylesheet" type="text/css" href="public/css/reset.css"/>
-    <script type="text/javascript">
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-39157716-1']);
-      _gaq.push(['_trackPageview']);
+<head>
+  <meta charset="UTF-8" />
+  <title>Automatic Dataset Augmentation</title>
+  <meta name="robots" content="all" />
+  <meta name="author" content="Yalong Bai">
+  <meta http-equiv="X-UA-Compatible" content="IE=100" />
+  <link rel="stylesheet" type="text/css" href="public/css/autoset.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/comment.css" />
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39157716-1']);
+    _gaq.push(['_trackPageview']);
 
-      (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <script src="public/javascripts/jquery/1.5.2/jquery.min.js"></script>
+</head>
 
-    </script>
-    <script src="public/javascripts/jquery/1.5.2/jquery.min.js"></script>
-  </head>
-  <body>
-    <div class="outline"></div>
-    <div class="container">
-  		<div id="content">
-<div class="about">
-  <div class="profile">
-    <div class="info" width="100%">
-      <div class="first-name"><b>Auto</b>matic <b>D</b>ataset <b>A</b>ugmentation</div>
-      <p class="extra-info"><b>AutoDA</b> - An automatically constucted dataset for augmenting ILSVRV-2012 dataset.</p>
-    </div>
-  </div>
-  <div class = "markdown-body">
-  <div class="about-page">
-    <div class="line-2">
-      <h1>Details</h1>
-      <p>AutoDA dataset is constructed to augment existing datasets ILSVRC-2012. The dataset is labeled by both of Web and DCNN. Web provides massive images with rich contextual information, while DCNN well-trained on ILSVRC-2012 are used to label these images and filter out noisy images. Meanwhile, the rich contextual information from Web ensures DCNN to archieve high labeling accuracy with relatively low confidence threshold. Togethor, we can augment the ILSVRC-2012 dataset in a scalable, accurate, and informative way.</p>
+<body>
+  <div class="outline"></div>
+  <div class="container">
+    <div id="content">
+      <div class="about">
+        <div class="profile">
+          <div class="info" width="100%">
+            <div class="first-name"><b>Auto</b>matic <b>D</b>ataset <b>A</b>ugmentation</div>
+            <p class="extra-info"><b>AutoDA</b> - An automatically constucted dataset for augmenting ILSVRV-2012 dataset.</p>
+          </div>
+        </div>
+        <div class="markdown-body">
+          <div class="about-page">
+            <div class="line-2">
+              <h1>Details</h1>
+              <p>AutoDA dataset is constructed to augment existing datasets ILSVRC-2012. The dataset is labeled by both of Web
+                and DCNN. Web provides massive images with rich contextual information, while DCNN well-trained on ILSVRC-2012
+                are used to label these images and filter out noisy images. Meanwhile, the rich contextual information from
+                Web ensures DCNN to archieve high labeling accuracy with relatively low confidence threshold. Togethor, we
+                can augment the ILSVRC-2012 dataset in a scalable, accurate, and informative way.</p>
 
-      <p>The AutoDA dataset contains <b>12.5 million</b> of images crawled from Web without URL or domain restriction. The number of images per category for AutoDA and ILSVRC-2012 is shown in Fig 1. The category list of AutoDA is same with ILSVRC-2012. The AutoDA also provides <b>texutal information</b> (relevant textual description accompanied with image in webpage) for each images. The AutoDA dataset is applicable for many kinds of vision tasks such as Object Recognition, Image Caption and Visual Question and Answer.</p>
-      <figure>
-        <img src="public/autoda_statistic.JPG" width="70%" alt>
-        <figcaption>Fig.1 - The image distributions of dataset AutoDA and ILSVRC-2012.</figcaption>
-      </figure>
-    </div>
-    <div class="line-2">
-      <h1>Dataset Downloads</h1>
-      <h2>1. <a href="https://1drv.ms/u/s!Ask-3YsvCI7KbjY4xTqIs2IEdu8">Download Image URLs</a></h2>
-      <p>The URLs are listed in a single txt file, where each line contains <code>image Key</code>,  <code>Category Label</code> and <code>Image URL</code>. The category label is following the category order in ILSVRC-2012 (<a href="https://1drv.ms/t/s!Ask-3YsvCI7KbRfNJFvJqswgbPM">Here</a>).</p>
-      <h2>2. <a href="https://1drv.ms/u/s!Ask-3YsvCI7Kb8OvG9BlV6cubJI">Download Textual Metadata</a></h2>
-      <p>The textual descriptions of each image in AutoDA are free available for download. All of these information are listed in a single txt file, where each line can be splitted into five elements including <code>Image Key</code>, <code>Category Label</code>, <code>Image URL</code>, <code>Meta Type</code> and <code>Text Decription</code> by "\t". It worthly note that one image may have multiply types of meta information. 
-      <!--h2>Download Original Images</h2-->
-      <!--p>First you are always free to obtain the images by their URLs. Alternatively, if you are a researcher/educator who wish to have a copy of the original images for non-commercial research and/or educational use, we may provide you access through our site, under certain conditions and at our discretion. The details are as follows:
+              <p>The AutoDA dataset contains <b>12.5 million</b> of images crawled from Web without URL or domain restriction.
+                The number of images per category for AutoDA and ILSVRC-2012 is shown in Fig 1. The category list of AutoDA
+                is same with ILSVRC-2012. The AutoDA also provides <b>texutal information</b> (relevant textual description
+                accompanied with image in webpage) for each images. The AutoDA dataset is applicable for many kinds of vision
+                tasks such as Object Recognition, Image Caption and Visual Question and Answer.</p>
+              <figure>
+                <img src="public/autoda_statistic.JPG" width="70%" alt>
+                <figcaption>Fig.1 - The image distributions of dataset AutoDA and ILSVRC-2012.</figcaption>
+              </figure>
+            </div>
+            <div class="line-2">
+              <h1>Dataset Downloads</h1>
+              <div id="comment" class="markdown-body">
+                <p>Before you download the AutoDA dataset, you mush agree to following terms of access:</p>
+                <blockquote>
+                  You have requested permission to use the <b>AutoDA database</b>. In exchange for such permission, you hereby
+                  agrees to the following terms and conditions:</br></br>
+                  1. The database can only be used for non-commercial research and educational purposes.</br>
+                  2. The author of the database make no representations or warranties regarding the Database, including but not limited to warranties of non-infringement or fitness for a particular purpose.</br>
+                  3. You accepts full responsibility for your use of the Database and shall defend and indemnify the Authors of AutoDA, against any and all claims arising from your use of the Database, including but not limited to your use of any copies of copyrighted images that you may create from the Database.</br>
+                  4. You may provide research associates and colleagues with access to the Database provided that they first agree to be bound by these terms and conditions.</br>
+                  5. The author of AutoDA reserve the right to terminate your access to the Database at any time.</br>
+                  6. If you are employed by a for-profit, commercial entity, your employer shall also be bound by these terms and conditions, and you hereby represents that you are authorized to enter into this agreement on behalf of such employer.</br>
+                  7. The Intellectual Property Right Law of the People's Republic of China apply to all disputes under this agreement.</br>
+                </br>
+                  
+                </blockquote>
+                <form action="#" onsubmit="if(document.getElementById('agree').checked) { document.getElementById('download').style.display='block'; document.getElementById('comment').style.display='none'; return false; } else { alert('Please indicate that you have read and agree to the Terms and Conditions'); return false; }">
+
+                  <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and
+                  Conditions and Privacy Policy<br />
+                  <input type="submit" name="submit" value="Download" class="submit" />
+
+                </form>
+              </div>
+              <div id="download" style="display:none;">
+                <h2>1. <a href="https://1drv.ms/u/s!Ask-3YsvCI7KbjY4xTqIs2IEdu8">Download Image URLs</a></h2>
+                <p>The URLs are listed in a single txt file, where each line contains <code>image Key</code>, <code>Category Label</code>                  and <code>Image URL</code>. The category label is following the category order in ILSVRC-2012 (<a href="https://1drv.ms/t/s!Ask-3YsvCI7KbRfNJFvJqswgbPM">Here</a>).</p>
+                <h2>2. <a href="https://1drv.ms/u/s!Ask-3YsvCI7Kb8OvG9BlV6cubJI">Download Textual Metadata</a></h2>
+                <p>The textual descriptions of each image in AutoDA are free available for download. All of these information
+                  are listed in a single txt file, where each line can be splitted into five elements including <code>Image Key</code>,
+                  <code>Category Label</code>, <code>Image URL</code>, <code>Meta Type</code> and <code>Text Decription</code>                  by "\t". It worthly note that one image may have multiply types of meta information.
+              </div>
+              <!--h2>Download Original Images</h2-->
+              <!--p>First you are always free to obtain the images by their URLs. Alternatively, if you are a researcher/educator who wish to have a copy of the original images for non-commercial research and/or educational use, we may provide you access through our site, under certain conditions and at our discretion. The details are as follows:
       </p>
       <blockquote>
         <p>1. Send a email</p>
 
       </blockquote-->
-      <h1>Models</h1>
-      <p>Below table shows the performance and download link of the models we trained on AutoDA. </p>
-      <div id="markdown-body">
-      <table>
-        <tbody>
-          <tr>
-            <td>DCNN</td>
-            <td>ILSVRC-2012</td>
-            <td>AutoDA</td>
-            <td>Merged</td>
-            <td>Merged (No dropout)</td>
-          </tr>
-          <tr>
-            <td>AlexNet</td>
-            <td>60.36 (82.38)</td>
-            <td>56.58 (78.57)</td>
-            <td>62.71 (83.71) <a href="https://1drv.ms/f/s!Ask-3YsvCI7KdAIz8dTgjTlmaps">[Model]</a></td>
-            <td>61.72 (82.62) <a href="https://1drv.ms/f/s!Ask-3YsvCI7KdoGFoBiB3YODvgc">[Model]</a></td>
-          </tr>
-          <tr>
-            <td>ResNet-50</td>
-            <td>74.44 (92.11)</td>
-            <td>70.17 (88.09)</td>
-            <td>77.36 (93.29) <a href="https://1drv.ms/f/s!Ask-3YsvCI7Ke10fcIpj3NTWKDI">[Model]</a></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      <!--h1>Download</h1>
+              <h1>Models</h1>
+              <p>Below table shows the performance and download link of the models we trained on AutoDA. </p>
+              <div id="markdown-body">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>DCNN</td>
+                      <td>ILSVRC-2012</td>
+                      <td>AutoDA</td>
+                      <td>Merged</td>
+                      <td>Merged (No dropout)</td>
+                    </tr>
+                    <tr>
+                      <td>AlexNet</td>
+                      <td>60.36 (82.38)</td>
+                      <td>56.58 (78.57)</td>
+                      <td>62.71 (83.71) <a href="https://1drv.ms/f/s!Ask-3YsvCI7KdAIz8dTgjTlmaps">[Model]</a></td>
+                      <td>61.72 (82.62) <a href="https://1drv.ms/f/s!Ask-3YsvCI7KdoGFoBiB3YODvgc">[Model]</a></td>
+                    </tr>
+                    <tr>
+                      <td>ResNet-50</td>
+                      <td>74.44 (92.11)</td>
+                      <td>70.17 (88.09)</td>
+                      <td>77.36 (93.29) <a href="https://1drv.ms/f/s!Ask-3YsvCI7Ke10fcIpj3NTWKDI">[Model]</a></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--h1>Download</h1>
       <h2><a href="http://1drv.ms/1NHxmi3">1. Autoset-1K</a></h2>
       <li>For each category, a set of image ID in <a href="http://clickture.blob.core.windows.net/split?restype=container&comp=list">Clickture-Full</a> is given. You can extract Autoset-1K image dataset according to our given image ID from Click-Full which contains 40 million of images.</li>
       <li>You must accept the <a href="http://web-ngram.research.microsoft.com/GrandChallenge/MSR-LA%20Data-MSR%20Bing%20Image%20Challenge.pdf">enclosed License Terms </a> of Bing-MSR Image Annotation Challenge Data in order to use Click-Full dataset. You are not allowed to further distribute Autoset-1K and Click-Full dataset.</li>
       <h2><a href="http://1drv.ms/1MqSvqR">2. Visual based Word Embeddings</a></h2>
       <h2><a href="http://1drv.ms/1OCgnMM">3. KNN results of Visual based Word Embeddings</a></h2-->
-    </div>
-  </div>
-   <!--div class="line-3">
+            </div>
+          </div>
+          <!--div class="line-3">
      <h1>About</h1>
   </div-->
 
-<!--
+          <!--
     <div class="line-5">
       <section id="internet-footprint">
       <h1>Downloads</h1>
@@ -110,9 +146,10 @@
       </section>
     </div>
 -->
-  </div>
-</div>
-  		</div>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
